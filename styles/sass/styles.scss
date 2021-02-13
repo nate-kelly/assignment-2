@@ -1,0 +1,331 @@
+@import "variables";
+@import "font-awesome";
+@import "setup";
+@import "header";
+@import "contact";
+@import "blog";
+
+// Global Styles
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 2rem;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+button,
+.button {
+    font-family: 'IM Fell English', serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: $secondary-heading;
+    margin-bottom: 25px;
+}
+
+h4 {
+    color: $twilight-blue;
+}
+
+p {
+    line-height: 1.3;
+}
+
+.new-destinations h2,
+.vacation-days h2,
+.win-trip h2,
+.blog-post h2 {
+    color: $twilight-blue;
+}
+
+.our-programs {
+    color: white;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: $button-text;
+    color: $twilight-blue;
+    background-color: $dandelion;
+    padding: 10px 20px;
+    margin-top: 25px;
+    border: 3px solid transparent;
+    transition: all .2s ease-in;
+}
+
+.button:hover,
+.button:focus {
+    color: $dandelion;
+    background: transparent;
+    border: 3px solid $dandelion;
+}
+
+.vacation-days .button:hover,
+.vacation-days .button:focus,
+.win-trip .button:hover,
+.win-trip .button:focus {
+    color: $dandelion;
+    background: $twilight-blue;
+}
+
+.shadow-left {
+    box-shadow: -15px 15px $dandelion;
+}
+
+.shadow-right {
+    box-shadow: 15px 15px $dandelion;
+}
+
+// General Section Styles
+section:nth-child(odd) {
+    background-color: $ice-blue;
+}
+
+section:nth-child(even) {
+    background-color: $twilight-blue;
+}
+
+section {
+    padding: 100px 0;
+}
+
+// New Destinations Section
+.new-destinations {
+    padding-top: 22vh;
+}
+
+.destinations-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.destinations-container div {
+    width: 46%;
+}
+
+.destinations-container div:first-child {
+    margin-bottom: 50px;
+}
+
+// Our Programs Section
+.program-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.program-column-1,
+.program-column-2 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.program-column-1 {
+    margin-top: -150px;
+    align-items: flex-end;
+}
+
+.program-column-2 {
+    margin-bottom: -150px;
+    align-items: flex-start;
+}
+
+.program-image {
+    width: 42vw;
+}
+
+.program-column-1 .program-text {
+    text-align: right;
+    margin-top: 80px;
+}
+
+.program-column-2 .program-text{
+    margin-bottom: 80px;
+}
+
+// Vacation Days Section
+.vacation-days {
+    text-align: center;
+}
+
+.vacation-text {
+    width: 80%;
+    margin: 0 auto;
+}
+
+// Banner Image Section
+.banner-image {
+    padding: 0;
+}
+
+.banner-image img {
+    width: 100%;
+}
+
+// Win Trip Section
+.trip-container {
+    display: flex;
+}
+
+.trip-image {
+    flex: 30%;
+}
+
+.trip-text {
+    flex: calc(70% - 50px);
+    margin-left: 50px;
+}
+
+// Gallery Section
+.gallery-container {
+    display: flex;
+}
+
+.gallery-container div:nth-child(2) {
+    margin: 0 25px;
+}
+
+// Footer Section
+footer {
+    background-color: $dandelion;
+    color: $twilight-blue;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: $twilight-blue;
+}
+
+footer a:hover,
+footer a:focus {
+    text-decoration: underline;
+}
+
+// General Form Styles
+::placeholder {
+    opacity: 1;
+}
+
+button {
+    font-size: $button-text;
+    border: 3px solid transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+// Media Queries
+
+@media (max-width: 1000px) {
+    .destinations-container {
+        flex-direction: column;
+        align-items: center;       
+    }
+    .destinations-container div {
+        width: 80%;
+    }
+    .destinations-container div:first-child {
+        margin-right: 0;
+    }
+    .destinations-container div:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 850px) {
+    .program-container {
+        flex-direction: column;
+    }
+    .program-column-1 {
+        margin-bottom: 80px;
+    }
+    .program-column-1,
+    .program-column-2 {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .program-column-1 .program-text {
+        text-align: center;
+    }
+    .program-image {
+        width: 100%;
+    }
+    .trip-container {
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .trip-text {
+        margin: 50px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .vacation-text {
+        width: 100%;
+    }
+    .gallery-container {
+        flex-direction: column;
+    }
+    .gallery-container div:nth-child(2) {
+        margin: 25px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .destinations-container h2,
+    .vacation-days h2,
+    .trip-container h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .destinations-container h2,
+    .vacation-days h2,
+    .trip-container h2 {
+        font-size: 3rem;
+    }
+}
+
+// Small fix for our program image width at large screen sizes.
+@media (min-width: 1600px) {
+    .program-image {
+        width: 100%;
+    }
+}
