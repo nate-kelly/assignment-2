@@ -1,6 +1,3 @@
-// Still to-do
-    // Hamburger icon only appears after a certain breakpoint
-
 // Target hamburger icon, dropdown and menu links
 const hamburger = document.querySelector(".hamburger");
 const dropdown = document.querySelector('.dropdown');
