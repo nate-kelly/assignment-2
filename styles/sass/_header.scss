@@ -4,22 +4,12 @@ header {
     height: 70vh;
 }
 
-header ul {
-    display: flex;
-    list-style: none;
-}
-
-header li:not(:last-child) {
-    margin-right: 40px;
-}
-
 header nav a {
     text-decoration: none;
     color: white;
     font-size: $nav-text;
     border-bottom: 3px solid transparent;
-    padding: 10px 0;
-    transition: all .2s ease;
+    transition: all .3s;
 }
 
 header nav a:hover,
@@ -33,10 +23,11 @@ h1 {
     color: $dandelion;
 }
 
-// Hamburger Nav Styles
+// Hamburger Icon Styles
 
 .hamburger {
-    display: none;
+    position: fixed;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -50,16 +41,55 @@ h1 {
     transition: 0.5s;
 }
 
-.change .topbar {
+.changeham .topbar {
     transform: rotate(-45deg) translate(-10px, 6px);
 }
 
-.change .middlebar {
+.changeham .middlebar {
     opacity: 0;
 }
 
-.change .bottombar {
+.changeham .bottombar {
     transform: rotate(45deg) translate(-10px, -8px);
+}
+
+// Dropdown Menu Styles
+
+.dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.showdropdown {
+    transform: translateY(0);
+}
+
+.dropdown ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.dropdown li {
+    margin: 50px 0;
+}
+
+.dropdown a {
+    padding: 25px;
 }
 
 // Header Content Styles
@@ -106,12 +136,12 @@ h1 {
 }
 
 @media (max-width: 700px) {
-    .hamburger {
-        display: initial;
-    }
-    nav ul li:not(.hamburger) {
-        display: none;
-    }
+    // .hamburger {
+    //     display: initial;
+    // }
+    // nav ul li:not(.hamburger) {
+    //     display: none;
+    // }
     h1 {
         font-size: 6rem;
     }
