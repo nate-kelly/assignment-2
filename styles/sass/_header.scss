@@ -13,10 +13,56 @@ header li:not(:last-child) {
     margin-right: 40px;
 }
 
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-size: $nav-text;
+    border-bottom: 3px solid transparent;
+    padding: 10px 0;
+    transition: all .2s ease;
+}
+
+header nav a:hover,
+header nav a:focus,
+header nav a:active {
+    border-bottom: 4px solid $dandelion;
+}
+
 h1 {
     font-size: $main-heading;
     color: $dandelion;
 }
+
+// Hamburger Nav Styles
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.topbar,
+.middlebar,
+.bottombar {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 8px 0;
+    transition: 0.5s;
+}
+
+.change .topbar {
+    transform: rotate(-45deg) translate(-10px, 6px);
+}
+
+.change .middlebar {
+    opacity: 0;
+}
+
+.change .bottombar {
+    transform: rotate(45deg) translate(-10px, -8px);
+}
+
+// Header Content Styles
 
 .header-container {
     display: flex;
@@ -33,21 +79,6 @@ h1 {
     margin-bottom: -17vh;
     margin-right: -11vw;
     width: 46vw;
-}
-
-header nav a {
-    text-decoration: none;
-    color: white;
-    font-size: $nav-text;
-    border-bottom: 3px solid transparent;
-    padding: 10px 0;
-    transition: all .2s ease;
-}
-
-header nav a:hover,
-header nav a:focus,
-header nav a:active {
-    border-bottom: 4px solid $dandelion;
 }
 
 // Media Queries
@@ -75,6 +106,12 @@ header nav a:active {
 }
 
 @media (max-width: 700px) {
+    .hamburger {
+        display: initial;
+    }
+    nav ul li:not(.hamburger) {
+        display: none;
+    }
     h1 {
         font-size: 6rem;
     }
