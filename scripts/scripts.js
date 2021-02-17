@@ -1,12 +1,10 @@
-// Target hamburger icon, dropdown and menu links
+// Hamburger menu navigation
 const hamburger = document.querySelector(".hamburger");
 const dropdown = document.querySelector('.dropdown');
 const menuItems = document.querySelectorAll('.menu-item');
 
-// Add event listener to hamburger icon
 hamburger.addEventListener('click', hamburgerToggle);
 
-// Function to run when hamburger is clicked
 function hamburgerToggle() {
     hamburger.classList.toggle('changeham');
     dropdown.classList.toggle('showdropdown');
@@ -14,4 +12,13 @@ function hamburgerToggle() {
 
 menuItems.forEach(function(menuItem) {
     menuItem.addEventListener('click', hamburgerToggle);
+})
+
+// Show/hide more info in vacation days section
+const showMore = document.querySelector('.show-more');
+const moreInfo = document.querySelector('.more-info');
+
+showMore.addEventListener('click', function(event) {
+    event.preventDefault();
+    moreInfo.classList.toggle('showmore');
 })
